@@ -30,7 +30,7 @@ RUN yarn docs:build
 
 
 
-FROM nginx:latest as production-stage
+FROM nginx:alpine as production-stage
 
 WORKDIR /usr/share/nginx/html
 
