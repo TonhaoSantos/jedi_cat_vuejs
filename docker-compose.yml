@@ -1,0 +1,33 @@
+#####################################################################
+#####################################################################
+####                                                             ####
+####  Instructions and build,                                    ####
+####  deploy and use in the                                      ####
+####  README.md file                                             ####
+####                                                             ####
+#####################################################################
+#####################################################################
+####                                                             ####
+####   docker-compose -f ./Deploy.docker-compose.yml up --build  ####
+####                                                             ####
+#####################################################################
+
+version: '3'
+
+networks:
+  kel-network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Deploy.Dockerfile
+    container_name: deploy
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    networks:
+      - test-network
