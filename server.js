@@ -15,7 +15,7 @@ app.get('*', (req, res) => {
   // TODO remover este console depois
   console.log(req)
 
-  res.sendFile(path.join(__dirname, '/dist', '/index.html'))
+  res.sendFile(path.join(__dirname, '/docs/.vuepress/dist', '/index.html'))
 })
 
 app.listen(port)
