@@ -22,7 +22,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Deploy.Dockerfile
+      dockerfile: Dockerfile
     container_name: deploy
     ports:
       - "8080:8080"
