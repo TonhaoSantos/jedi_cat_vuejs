@@ -25,7 +25,7 @@ RUN yarn install
 
 COPY . .
 
-RUN vuepress build docs
+RUN yarn docs:build
 
 
 
